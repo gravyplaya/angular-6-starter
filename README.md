@@ -29,7 +29,7 @@
 
 ## Uses
 
-* [Angular 2+](https://angular.io): frontend framework
+* [Angular 7+](https://angular.io): frontend framework
 * [Bootstrap](http://www.getbootstrap.com): layout and styles
 * [Font Awesome](http://fontawesome.io): icons
 
@@ -111,10 +111,6 @@ npm run prod
   heroku open
   ```
 
-## Demo
-
-![In Action](https://d2ffutrenqvap3.cloudfront.net/items/1A422k2U0O2R0T2M2j3k/Screen%20Recording%202018-02-25%20at%2012.44%20AM.gif)
-
 ## Running tests
 
 Run the following command inside your terminal to execute the unit tests via [Karma](https://karma-runner.github.io/).
@@ -129,7 +125,7 @@ A huge thanks to all of our contributors:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/45731?v=3" width="100px;"/><br /><sub><b>Mohamed Meabed</b></sub>](https://github.com/Meabed)<br />[💻](https://github.com//angular-2-starter/commits?author=Meabed "Code") [📢](#talk-Meabed "Talks") | [<img src="https://avatars2.githubusercontent.com/u/16267321?v=3" width="100px;"/><br /><sub><b>Zeeshan Ahmad</b></sub>](https://github.com/zeeshanu)<br />[💻](https://github.com//angular-2-starter/commits?author=zeeshanu "Code") [🐛](https://github.com//angular-2-starter/issues?q=author%3Azeeshanu "Bug reports") [⚠️](https://github.com//angular-2-starter/commits?author=zeeshanu "Tests") [📖](https://github.com//angular-2-starter/commits?author=zeeshanu "Documentation") |
+| [<img src="https://avatars0.githubusercontent.com/u/45731?v=3" width="100px;"/><br /><sub><b>Mohamed Meabed</b></sub>](https://github.com/Meabed)<br />[💻](https://github.com/me-io/angular-2-starter/commits?author=Meabed "Code") [📢](#talk-Meabed "Talks") | [<img src="https://avatars2.githubusercontent.com/u/16267321?v=3" width="100px;"/><br /><sub><b>Zeeshan Ahmad</b></sub>](https://github.com/ziishaned)<br />[💻](https://github.com/me-io/angular-2-starter/commits?author=ziishaned "Code") [🐛](https://github.com/me-io/angular-2-starter/issues?q=author%3Aziishaned "Bug reports") [⚠️](https://github.com/me-io/angular-2-starter/commits?author=ziishaned "Tests") [📖](https://github.com/me-io/angular-2-starter/commits?author=ziishaned "Documentation") |
 | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
