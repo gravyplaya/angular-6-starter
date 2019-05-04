@@ -57,22 +57,75 @@
     </div>
     <div class="col-md-3">
       <div class="card">
-        <h5 class="card-header">Tags</h5>
+        <div class="card-header d-flex justify-content-between">
+          <h5 class="mb-0">Addresses</h5>
+          <button class="btn btn-primary btn-sm" (click)="createAddy()"><i class="fa fa-plus fa-fw"></i> Create address
+          </button>
+        </div>
         <div class="card-body pt-3 pb-3">
-          <div *ngIf="tags.length === 0">
+          <div *ngIf="addys.length === 0">
             <div class="p-2 text-center">
-              No tags found 😥
+              No addresses found 😥
             </div>
           </div>
-          <ul class="list-unstyled mb-0 tags-list" *ngIf="tags.length > 0">
-            <li *ngFor="let tag of tags">
-              <a routerLink="/tag/{{tag._id}}/post">
-                <span class="tag-color" [ngStyle]="{'background-color': tag.color}"></span>{{ tag.name}}
-              </a>
+            <!-- items being paged -->
+            <div *ngFor="let item of pagedItems"><a  (click)="open(item)">{{item}}</a></div>
+
+            <!-- pager -->
+          <nav aria-label="pager">
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{'disabled':pager.currentPage === 1, 'pager-item':pager}">
+                    <a (click)="setPager(1)" class="page-link">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1, 'pager-item':pager}">
+                    <a (click)="setPager(pager.currentPage - 1)" class="page-link"> < </a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page, 'pager-item':pager}">
+                    <a (click)="setPager(page)" class="page-link">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages, 'pager-item':pager}">
+                    <a (click)="setPager(pager.currentPage + 1)" class="page-link"> > </a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages, 'pager-item':pager}">
+                    <a (click)="setPager(pager.totalPages)" class="page-link">Last</a>
+                </li>
+            </ul>
+          </nav>
+
+          <!-- <ul class="list-unstyled mb-0" *ngIf="addys.length > 0">
+            <li *ngFor="let addy of addys">
+              <a data-toggle="modal" href="#editAddressPerms" data-addy="addy" data-perm="connect">{{addy}}</a>
+
             </li>
-          </ul>
+          </ul> -->
+<!-- https://codepen.io/ionic/pen/tfAzj  -->
+          <!-- <app-jw-modal id="custom-modal-1">
+            <div class="modal fade" id="editAddressPerms" editAddressPerms tabindex="-1" role="dialog" aria-labelledby="editAddressPermsLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editAddressPermsLabel">Edit Permissions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Address: {{item}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>Home page text: {{id}}<input type="text" [(ngModel)]="addy" /></p>
+            <button (click)="closeModal('custom-modal-1');">Close</button>
+        </app-jw-modal> -->
+          
         </div>
       </div>
+
     </div>
   </div>
 </div>

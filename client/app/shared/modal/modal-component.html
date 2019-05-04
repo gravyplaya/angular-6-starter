@@ -1,0 +1,115 @@
+<div class="modal-header">
+  <h4 class="modal-title">Address Permissions</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>{{ addy }}</p>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label
+      formArrayName="orders"
+      *ngFor="let order of form.controls.orders.controls; let i = index"
+    >
+      <input type="checkbox" [formControlName]="i" />
+      {{ orders[i].name }}
+    </label>
+
+    <div *ngIf="!form.valid">At least one order must be selected</div>
+    <br />
+    <button [disabled]="!form.valid">submit</button>
+  </form>
+  <!-- <form [formGroup]="form2" (ngSubmit)="submit()">
+     <label formArrayName="orders" class="custom-control-label">
+      <input
+        type="checkbox"
+        [formControlName]="i"
+        class="custom-control-input"
+      />
+      {{ orders[i].name }}
+    </label>
+
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="connect"
+        [formControlName]="connect"
+      />
+      <label class="custom-control-label" for="connect">Connect</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="send"
+        [formControlName]="send"
+      />
+      <label class="custom-control-label" for="send">Send</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="receive"
+        [formControlName]="receive"
+      />
+      <label class="custom-control-label" for="receive">Receive</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="issue"
+        [formControlName]="issue"
+      />
+      <label class="custom-control-label" for="issue">Issue</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="mine"
+        [formControlName]="mine"
+      />
+      <label class="custom-control-label" for="mine">Mine</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="admin"
+        [formControlName]="admin"
+      />
+      <label class="custom-control-label" for="admin">Admin</label>
+    </div>
+    <div class="custom-control custom-switch">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="activate"
+        [formControlName]="activate"
+      />
+      <label class="custom-control-label" for="activate">Activate</label>
+    </div>
+
+    <button>submit</button>
+    <label *ngFor="let perm of perms">
+      {{ perm.type }}
+    </label>
+  </form> -->
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Close
+  </button>
+</div>

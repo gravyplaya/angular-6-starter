@@ -18,15 +18,19 @@ import {AuthInterceptor} from './util/interceptor/auth.interceptor';
 import {AuthGuardSuperAdmin} from './services/auth-guard-super-admin.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {NgbdModalContentComponent} from "./shared/modal/modal.component";
 import {PostService} from "./post/services/post.service";
 import {TagService} from "./tag/services/tag.service";
+import {PagerService} from './services/pager/index';
+import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     NotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    NgbdModalContentComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import {TagService} from "./tag/services/tag.service";
     routing,
     SharedModule,
     DynamicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,
@@ -49,11 +54,16 @@ import {TagService} from "./tag/services/tag.service";
       multi: true,
     },
     PostService,
-    TagService
+    TagService,
+    PagerService,
+    NgbActiveModal
   ],
   bootstrap: [
     AppComponent,
   ],
+  entryComponents: [
+    NgbdModalContentComponent
+  ]
 })
 
 export class AppModule {

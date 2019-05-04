@@ -13,6 +13,7 @@ import {RouterModule} from '@angular/router';
 import {FooterComponent} from './page/footer.component';
 import {AccountSidebarComponent} from './account-sidebar/account-sidebar.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -43,7 +44,7 @@ import {AccountSidebarComponent} from './account-sidebar/account-sidebar.compone
     FooterComponent,
     ProgressBarComponent,
     TestComponent,
-    AccountSidebarComponent,
+    AccountSidebarComponent
   ],
   providers: [
     ToastComponent,
